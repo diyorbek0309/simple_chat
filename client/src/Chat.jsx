@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -54,6 +54,7 @@ const Messages = ({ user }) => {
             justifyContent: user === messageUser ? "flex-end" : "flex-start",
             paddingBottom: "1em",
           }}
+          key={id}
         >
           {user !== messageUser && (
             <div
@@ -90,7 +91,7 @@ const Messages = ({ user }) => {
 
 const Chat = () => {
   const [state, stateSet] = useState({
-    user: "Jack",
+    user: "Diyorbek",
     content: "",
   });
   const [postMessage] = useMutation(POST_MESSAGE);
